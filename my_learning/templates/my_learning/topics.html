@@ -1,0 +1,10 @@
+{%extends "my_learning/base.html"%} {%block content %}
+<p>Topics</p>
+<ul>
+	{%for topic in topics %}
+	<li><a href="{%url 'my_learning:topic' topic.id %}">{{topic}}</a></li>
+	{%empty%}
+	<li>No topics have been added yet.</li>
+	{%endfor %}
+</ul>
+{%endblock content %}
