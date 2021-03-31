@@ -1,0 +1,7 @@
+{%extends "my_learning/base.html"%} {%block content%}
+<form method="post" action="{%url 'users:register'%}">
+	{%csrf_token%} {{form.as_p}}
+	<button name="submit">Register</button>
+	<input type="hidden" name="text" value="{%url 'my_learning:index' %}" />
+</form>
+{%endblock content%}

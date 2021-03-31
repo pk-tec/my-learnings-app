@@ -1,12 +1,11 @@
 <p>
 	<a href="{% url 'my_learning:index'%}">My Learnings</a> -
 	<a href="{% url 'my_learning:topics'%}">Topics</a> - 
-    {% if user.is_authenticated%}
-        Hello, {{user.username}}.
-        <a href="{% url 'users:logout'%}">Logout</a>
-    {%else%}
-    <a href="{% url 'users:login' %}">Log in</a>
-    {% endif%}
-
+    {% if user.is_authenticated%} Hello, {{user.username}}.
+	<a href="{% url 'users:logout'%}">Logout</a>
+	{%else%}
+	<a href="{% url 'users:register'%}">Register</a> - 
+	<a href="{% url 'users:login' %}">Log in</a>
+	{% endif%}
 </p>
 {%block content %}{% endblock content %}
